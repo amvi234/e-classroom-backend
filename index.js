@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.post("/register", verifyToken,async (req, resp) => {
+app.post("/register",async (req, resp) => {
     let user = new User(req.body);
     let result = await user.save();
     result = result.toObject();
