@@ -8,6 +8,9 @@ const Student = require('./db/Student');
 const Jwt = require('jsonwebtoken');
 const jwtKey = 'e-com';
 const app = express();
+app.get('/',(req,resp)=>{
+    res.send("Hello World")
+})
 app.use(express.json());
 app.use(cors());
 
@@ -124,4 +127,4 @@ function verifyToken(req, resp, next) {
 
 }
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);

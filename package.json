@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "front-end":"npm start --prefix front-end",
+    "dev":"concurrently \"nodemon server\" \"npm run front-end\"",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
